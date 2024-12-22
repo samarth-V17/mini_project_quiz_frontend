@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Set Quiz Questions</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Login Page Styles */
+    .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-box {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    .login-box h2 {
+      margin-bottom: 1.5rem;
+      color: black;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .login-box button {
+      background: #2575fc;
+      color: white;
+      border: none;
+      padding: 0.8rem;
+      width: 100%;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .login-box button:hover {
+      background: #0056b3;
+    }
+
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    form {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: inline-block;
+      width: 100%;
+      max-width: 600px;
+      color: #333;
+    }
+
+    form label {
+      font-weight: bold;
+      display: block;
+      margin-top: 1rem;
+    }
+
+    form input {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    button {
+      background: #2575fc;
+      color: white;
+      border: none;
+      padding: 1rem;
+      width: 100%;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-top: 1.5rem;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .question {
+      margin-bottom: 1.5rem;
+    }
+
+    
+  </style>
+</head>
+<body>
+
+  <!-- admin login -->
+  <div class="login-container" id="login-page">
+    <div class="login-box">
+      <h2>Admin Login</h2>
+      <input type="text" id="user-id" placeholder="Enter User ID" />
+      <input type="password" id="password" placeholder="Enter Password" />
+      <button id="login-btn">Login</button>
+    </div>
+  </div>
+
+
+ 
+<div id="admin-panel" style="display:none;">
+    <h1>Set Your Own Quiz Questions</h1>
+
+  <form id="question-form">
+    <label for="num-questions">Number of Questions:</label>
+    <input type="number" id="num-questions" min="1" required><br>
+
+    <div id="questions-container"></div>
+    
+    <button type="submit">Save Questions</button>
+  </form>
+</div>
+
+  <script>
+
+// Login Form Validation Script
+
+// Elements for login
+const loginPage = document.getElementById('login-page');
+const adminPanel = document.getElementById('admin-panel'); // Your admin panel that contains the question form
+const loginBtn = document.getElementById('login-btn');
+const userIdInput = document.getElementById('user-id');
+const passwordInput = document.getElementById('password');
+
+// Hardcoded login credentials (for simplicity)
+const correctUserId = "admin";  // Change this to your desired admin ID
+const correctPassword = "admin";  // Change this to your desired password
+
+// Event listener for login button click
+loginBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+
+  // Get the entered user ID and password
+  const enteredUserId = userIdInput.value;
+  const enteredPassword = passwordInput.value;
+
+  // Check if the entered credentials are correct
+  if (enteredUserId === correctUserId && enteredPassword === correctPassword) {
+    
+
+    // Hide the login page and show the admin panel
+    loginPage.style.display = 'none';  // Hide the login form
+    adminPanel.style.display = 'block';  // Show the admin panel
+  } else {
+    alert("Invalid User ID or Password");
+  }
+});
+
+
+
+const form = document.getElementById('question-form');
+const numQuestionsInput = document.getElementById('num-questions');
+const questionsContainer = document.getElementById('questions-container');
+
+// Dynamically generate inputs for the number of questions
+numQuestionsInput.addEventListener('input', () => {
+  const numQuestions = numQuestionsInput.value;
+  questionsContainer.innerHTML = '';  // Clear previous inputs
+
+  for (let i = 0; i < numQuestions; i++) {
+    const questionDiv = document.createElement('div');
+    questionDiv.classList.add('question');
+
+    questionDiv.innerHTML = `
+      <h3>Question ${i + 1}</h3>
+      <label for="question${i}">Question Text:</label>
+      <input type="text" id="question${i}" name="question${i}" required><br>
+
+      <label for="options${i}">Options (comma-separated):</label>
+      <input type="text" id="options${i}" name="options${i}" required><br>
+
+      <label for="correct${i}">Correct Answer (index):</label>
+      <input type="number" id="correct${i}" name="correct${i}" required><br><br>
+    `;
+    questionsContainer.appendChild(questionDiv);
+  }
+});
+
+// Save the questions and send them to the backend
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const numQuestions = numQuestionsInput.value;
+  const questions = [];
+
+  for (let i = 0; i < numQuestions; i++) {
+    const questionText = document.getElementById(`question${i}`).value;
+    const optionsText = document.getElementById(`options${i}`).value.split(',');
+    const correctAnswer = document.getElementById(`correct${i}`).value;
+
+    questions.push({
+      question: questionText,
+      options: optionsText,
+      correct: parseInt(correctAnswer)  // Make sure correct answer is an integer index
+    });
+  }
+
+  // Send questions to the backend using a POST request
+  fetch('https://mini-project-quiz-backend.onrender.com/save-questions', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(questions)  // Send the array of questions as JSON
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Error saving questions');
+    }
+    return response.text();
+  })
+  .then(data => {
+    console.log('Questions saved successfully:', data);
+    alert('Questions saved successfully!');
+  })
+  .catch(error => {
+    console.error('Error saving questions:', error);
+    alert('Failed to save questions!');
+  });
+});
+
+  </script>
+</body>
+</html>

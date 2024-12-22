@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App with Login</title>
+  <link rel="stylesheet" href="style.css">
+  </head>
+
+<body>
+  <!-- Login Page -->
+  <div class="login-container" id="login-page">
+    <div class="login-box">
+      <h2>Student Login</h2>
+      <input type="text" id="user-id" placeholder="Enter User ID" />
+      <input type="password" id="password" placeholder="Enter Password" />
+      <button id="login-btn">Login</button>
+      <br>
+      <br>
+      <p id="admin-dash" style="cursor: pointer; color: blue;">Admin Login</p>
+    </div>
+  </div>
+
+  <!-- Quiz Instruction Section -->
+  <div class="instruction" id="instruction-page">
+    <header>
+      <p>Some Rules of this Quiz</p>
+    </header>
+    <div class="rules">
+      <p>1. You will have only <span>10 seconds</span> to answer each question.</p>
+      <p>2. Once you select any option, it will be considered your final answer.</p>
+      <p>3. Once you select any option, it cannot be undone.</p>
+      <p>4. For each correct answer, you will be rewarded with points.</p>
+      <p>5. The total score will be revealed at the end.</p>
+    </div>
+    <div class="instruction-btn">
+            <button id="start-quiz-btn">Start Quiz</button>
+    </div>
+  </div>
+
+  <!-- Quiz Page -->
+  <div class="wrapper" id="quiz-page">
+    <header>
+      <p>Quiz</p>
+      <div class="Timer">
+        <p>Time Left</p>
+        <p>10</p>
+      </div>  
+    </header>
+    
+    <div class="question-container" id="question-container">
+      <!-- Question will appear here -->
+    </div>
+    <div class="option-container" id="option-container">
+      <!-- Options will appear here -->
+    </div>
+    <div class="status">
+      <p class="question-num">
+        Question <span id="current-question">1</span> of <span id="total-questions">5</span>
+      </p>
+      <div class="btn">
+        <button>Next</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="result-card" id="result-card">
+    <header>
+      <p>Result</p>
+    </header>
+    <div class="image">
+      <div class="user-score">
+        <p class="value">30</p>
+        <p>Your Score</p>
+      </div>
+    </div>
+    <div class="score">
+      <div class="total-score">
+        <p class="value">50</p>
+        <p>Total Questions</p>
+      </div>
+      <div class="attempted">
+        <p class="value">27</p>
+        <p>Attempted</p>
+      </div>
+      <div class="unattempted">
+        <p class="value">23</p>
+        <p>Unattempted</p>
+      </div>
+      <div class="wrong">
+        <p class="value">10</p>
+        <p>Wrong</p>
+      </div>
+    </div>
+    <div class="btn">   
+      <button id="exit-btn">Exit</button>
+  </div>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

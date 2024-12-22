@@ -1,0 +1,286 @@
+
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: #333;
+      text-align: center;
+    }
+
+    /* Login Page Styles */
+    .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-box {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    .login-box h2 {
+      margin-bottom: 1.5rem;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .login-box button {
+      background: #2575fc;
+      color: white;
+      border: none;
+      padding: 0.8rem;
+      width: 100%;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .login-box button:hover {
+      background: #0056b3;
+    }
+
+    /* Instruction Page Styles */
+    .instruction {
+      display: none;
+      background: white;
+      width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+    .instruction header {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .rules p {
+      margin: 10px 0;
+      font-size: 1rem;
+    }
+
+    .instruction-btn {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .instruction-btn button {
+      background: #2575fc;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .instruction-btn button:hover {
+      background: #0056b3;
+    }
+
+    /* Quiz Page Styles */
+    .wrapper {
+      display: none;
+      background: white;
+      width: 60%;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+    .wrapper header .Timer{
+  display: flex;
+  gap:6px;
+  padding:5px;
+  background:#E7E7E9;
+  border-radius:3px;
+  align-items: center;
+  font-size:15px;
+  font-weight: 500;
+}
+.Timer p:last-child{
+  background:black;
+  color:#fff;
+  padding:3px;
+  font-weight:800;
+}
+.timer-progress{
+  width:100%;
+  height:4px;
+  background:#fff;
+  margin-bottom: 5px;
+  
+}
+
+    .question-container {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .option-container button {
+      background: #2575fc;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      width: 100%;
+      margin: 10px 0;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .option-container button:hover {
+      background: #0056b3;
+    }
+    .btn button{
+  padding:8px 18px;
+  background:#5F84FF;
+  border:none;
+  font-size:14px;
+  color:#fff;
+  font-weight:600;
+  border-radius:4px;
+}
+.btn button:active{
+  background:#3462FF;
+}
+
+    /* Result Page Styles */
+    .result-card {
+      display: none;
+      background: white;
+      width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .result-card header {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .score-btn button {
+      background: #2575fc;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .score-btn button:hover {
+      background: #0056b3;
+    }
+
+   
+  /* RESULT CARD ADDED STYLE */
+
+.result-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  padding: 20px;
+  text-align: center;
+}
+
+.result-card header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.result-card .image {
+  margin-bottom: 20px;
+}
+
+.result-card .user-score {
+  background-color: #e0ecff;
+  color: #366fd4;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.result-card .user-score .value {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.result-card .score {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.result-card .score div {
+  padding: 15px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.result-card .score .total-score {
+  background-color: #e0ecff;
+  color: #366fd4;
+}
+
+.result-card .score .attempted {
+  background-color: #e4f9e1;
+  color: #3b923b;
+}
+
+.result-card .score .unattempted {
+  background-color: #f9f2e4;
+  color: #9e6500;
+}
+
+.result-card .score .wrong {
+  background-color: #fde2e1;
+  color: #d32f2f;
+}
+
+.result-card-btn{
+  background: #2575fc;
+      color: white;
+      border: none;
+      padding: 0.8rem;
+      width: 100%;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+}
+  
