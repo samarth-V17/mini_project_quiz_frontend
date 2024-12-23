@@ -1,205 +1,208 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    /* General Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: #333;
+  text-align: center;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #6a11cb, #2575fc);
-      color: #333;
-      text-align: center;
-    }
-
-    /* Login Page Styles */
-    .login-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .login-box {
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      width: 300px;
-    }
-
-    .login-box h2 {
-      margin-bottom: 1.5rem;
-    }
-
-    .login-box input {
-      width: 100%;
-      padding: 0.8rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-    }
-
-    .login-box button {
-      background: #2575fc;
-      color: white;
-      border: none;
-      padding: 0.8rem;
-      width: 100%;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    .login-box button:hover {
-      background: #0056b3;
-    }
-
-    /* Instruction Page Styles */
-    .instruction {
-      display: none;
-      background: white;
-      width: 80%;
-      margin: 20px auto;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      text-align: left;
-    }
-
-    .instruction header {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    .rules p {
-      margin: 10px 0;
-      font-size: 1rem;
-    }
-
-    .instruction-btn {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 20px;
-    }
-
-    .instruction-btn button {
-      background: #2575fc;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    .instruction-btn button:hover {
-      background: #0056b3;
-    }
-
-    /* Quiz Page Styles */
-    .wrapper {
-      display: none;
-      background: white;
-      width: 60%;
-      margin: 20px auto;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      text-align: left;
-    }
-
-    .wrapper header .Timer{
+/* Login Page Styles */
+.login-container {
   display: flex;
-  gap:6px;
-  padding:5px;
-  background:#E7E7E9;
-  border-radius:3px;
+  justify-content: center;
   align-items: center;
-  font-size:15px;
+  height: 100vh;
+}
+
+.login-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.login-box h2 {
+  margin-bottom: 1.5rem;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.login-box button {
+  background: #2575fc;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background: #0056b3;
+}
+
+/* Instruction Page Styles */
+.instruction {
+  display: none;
+  background: white;
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.instruction header {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.rules p {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+.instruction-btn {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.instruction-btn button {
+  background: #2575fc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.instruction-btn button:hover {
+  background: #0056b3;
+}
+
+/* Quiz Page Styles */
+.wrapper {
+  display: none;
+  background: white;
+  width: 60%;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.wrapper header .Timer {
+  display: flex;
+  gap: 6px;
+  padding: 5px;
+  background: #E7E7E9;
+  border-radius: 3px;
+  align-items: center;
+  font-size: 15px;
   font-weight: 500;
 }
-.Timer p:last-child{
-  background:black;
-  color:#fff;
-  padding:3px;
-  font-weight:800;
+
+.Timer p:last-child {
+  background: black;
+  color: #fff;
+  padding: 3px;
+  font-weight: 800;
 }
-.timer-progress{
-  width:100%;
-  height:4px;
-  background:#fff;
+
+.timer-progress {
+  width: 100%;
+  height: 4px;
+  background: #fff;
   margin-bottom: 5px;
-  
+
 }
 
-    .question-container {
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-    }
-
-    .option-container button {
-      background: #2575fc;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      width: 100%;
-      margin: 10px 0;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .option-container button:hover {
-      background: #0056b3;
-    }
-    .btn button{
-  padding:8px 18px;
-  background:#5F84FF;
-  border:none;
-  font-size:14px;
-  color:#fff;
-  font-weight:600;
-  border-radius:4px;
-}
-.btn button:active{
-  background:#3462FF;
+.question-container {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
-    /* Result Page Styles */
-    .result-card {
-      display: none;
-      background: white;
-      width: 80%;
-      margin: 20px auto;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
+.option-container button {
+  background: #2575fc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-    .result-card header {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
+.option-container button:hover {
+  background: #0056b3;
+}
 
-    .score-btn button {
-      background: #2575fc;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
+.btn button {
+  padding: 8px 18px;
+  background: #5F84FF;
+  border: none;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 4px;
+}
 
-    .score-btn button:hover {
-      background: #0056b3;
-    }
+.btn button:active {
+  background: #3462FF;
+}
 
-   
-  /* RESULT CARD ADDED STYLE */
+/* Result Page Styles */
+.result-card {
+  display: none;
+  background: white;
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.result-card header {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.score-btn button {
+  background: #2575fc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.score-btn button:hover {
+  background: #0056b3;
+}
+
+
+/* RESULT CARD ADDED STYLE */
 
 .result-card {
   background-color: white;
@@ -273,14 +276,13 @@
   color: #d32f2f;
 }
 
-.result-card-btn{
+.result-card-btn {
   background: #2575fc;
-      color: white;
-      border: none;
-      padding: 0.8rem;
-      width: 100%;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
 }
-  
